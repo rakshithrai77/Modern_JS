@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshith</title>
+    <script type="text/javascript">
+         //handling error and script and handling pyramid of doom
+        function loadscrip(src,callback)
+        {
+            let script=document.createElement('script');
+            script.src=src;
+            script.onload= () => callback(null,script);
+            script.onerror= () => callback(new Error('script failed'))
+            document.head.append(script)
+        }
+
+        loadscrip('./callback.js',step1)
+        function step1(error,result){
+                if(error)
+                console.log(error.message);
+                else
+                loadscrip('./callback1.js',step2)}
+
+        function step2(error,result){ 
+            console.log(a)
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
