@@ -1,1 +1,2 @@
-console.log("yes")
+
+function one(){console.log("one")}
