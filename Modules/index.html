@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="./script3.js"></script>
+    <script type="module" src="./script2.js"></script>
+    <script type="module" src="./script1.js"></script>
+    //<!-- Assuming we got bundle.js from a tool like Webpack -->
+<script src="bundle.js"></script>
+    <script  type="module" >
+        console.log("yes",typeof button)
+    </script>
+    <script>
+        console.log(typeof button)
+    </script>
+        
+</head>
+<body>
+    <button id="button">hello</button>
+</body>
+</html>
