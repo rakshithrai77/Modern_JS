@@ -2,12 +2,13 @@
  let admin={ a:67
 }
 
-function sayHi()
+ function sayHi()
 {
     console.log('hi')
 }
 console.log(admin.a)
-export {sayHi,admin}
+export {sayHi as default,admin}
+/*
 //export {sayHi as a,admin as b}
 //export default
 export default class User { 
@@ -31,4 +32,4 @@ export {default as User} from './user.js';
 export {login, logout} from './helpers.js';
 
 export * from './user.js'; // to re-export named exports
-export {default} from './user.js'; // to re-export the default export
+export {default} from './user.js'; // to re-export the default export*/
