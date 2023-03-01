@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>Begin</div>
+
+    <ul>
+      <li>
+        <b>Information</b>
+      </li>
+    </ul>
+    <script>
+        
+        console.log("yes",document.documentElement)
+        console.log(document.body)
+        console.log(document.head)
+        console.log(document.body.childNodes)
+        console.log(document.body.childNodes[0]===document.body.firstChild)
+        console.log(document.body.childNodes[document.body.childNodes.length-1]===document.body.lastChild)
+        for(let i of document.body.childNodes)
+            console.log(i)
+        console.log(Array.from(document.body.childNodes).filter)
+        //child Nodes
+        //for in loop for html colection
+        //sibling parents
+        console.log(document.body.previousElementSibling)
+        console.log(document.body.parentElement)
+        for(let i of document.body.children)
+            console.log(i)
+            console.log( document.documentElement.parentNode ); // document
+console.log( document.documentElement.parentElement );
+        
+    </script>
+</body>
+</html>

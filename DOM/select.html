@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        let elem=document.getElementById('elem-content')
+        console.log(elem)
+        elem.style.background='red';
+        let elem1=document.querySelectorAll('ul>li:last-child')
+        for(let i of elem1)
+        {
+            console.log(i.matches('li'))
+            console.log(i.innerHTML)
+        }
+        let elem3= document.querySelector('.hey');
+        console.log(elem3.closest('ul'))
+        /*
+        Live collections
+All methods "getElementsBy*" return a live collection. Such collections always reflect the current state of the document and “auto-update” when it changes.*/
+    </script>
+</head>
+<body>
+    <div id="elem">
+        <div id="elem-content">Element</div>
+      </div>
+      <ul>
+        <li>The</li>
+        <li>test</li>
+      </ul>
+      <ul>
+        <li class="hey">has</li>
+        <li>passed</li>
+      </ul>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        console.log(document.body.constructor.name)
+        console.log(document.body)
+        console.log(document.body instanceof EventTarget);
+        //nodetype
+        console.log(document.body.firstChild.nodeType)
+        console.log(document.body.tagName)
+        console.log(document.body.firstChild.tagName)
+        console.log(document.body.innerHTML)
+       // document.body.innerHTML="hello1"
+        //innerHTML+= is nothing but recreating the the DOM conetnts
+
+        let body=document.body;
+        //body.outerHTML="<p>hello</p>"
+        console.log(body);
+        let elem1=document.getElementById('10');
+        elem1.hidden=true
+        setInterval(() => 
+            {
+                elem1.hidden=!elem1.hidden;
+            }
+            
+        , 1000);
+    </script>
+</head>
+<body>
+    <div>
+        yes
+    </div>
+    <div id='10'>
+        Yes1
+    </div>
+    <div id='11'>
+        Yes2
+    </div>
+</body>
+</html>
