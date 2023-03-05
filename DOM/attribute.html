@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshith</title>
+    <script type="module">
+        document.mydata={
+            hello:"10",
+        }
+        console.log(document.mydata.hello);
+        console.log(document.body.id);//attibute
+        console.log(document.body.getAttribute('something'))
+        for(let i of document.body.attributes)
+        {
+            console.log(i)
+        }
+        document.body.setAttribute("test",123)
+        console.log(document.body.outerHTML)
+        //property attribute synchronization
+        let elem=document.querySelector('#test1');
+        elem.setAttribute('id','id');
+        console.log(elem.id);
+
+        elem.id='10'
+        console.log(elem.getAttribute('id'))
+        let elem1=document.querySelector('#test2');
+        elem1.setAttribute('value','yes');
+        console.log(elem1.value);
+
+        elem1.value='10'
+        console.log(elem1.getAttribute('value'))
+        console.log(elem1.nextElementSibling.getAttribute('checked'))
+
+
+
+
+    </script>
+</head>
+<body id="test1"  something="56">
+
+    <div id="test">
+        <input type="text" id="test2">
+        <input type="checkbox" checked id="test3">
+    </div>
+    
+</body>
+</html>

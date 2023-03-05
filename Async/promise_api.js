@@ -1,5 +1,6 @@
+'use-strict'
 import fetch from 'node-fetch'
-Promise.all([
+/*Promise.all([
     new Promise(resolve=>setTimeout(()=>resolve(1),1000)),
     new Promise(resolve=>setTimeout(()=>resolve(2),1000)),
     new Promise(resolve=>setTimeout(()=>resolve(3),1000))
@@ -26,13 +27,19 @@ Promise.all(promise).then(responses => {responses.forEach(response => console.lo
   ).then (r =>Promise.all(r.map(r=>r.json()))).then(
     data=>data.forEach(data1=>console.log(data1.login))
   );
-
+*/
+process.on('unhandledRejection', error => {
+  // Will print "unhandledRejection err is not defined"
+  console.log('unhandledRejection', error.message);
+});
   Promise.all([
-    new Promise(resolve=>setTimeout(()=>resolve(1),1000)),
+    new Promise(resolve=>setTimeout(()=>resolve(1),4000)),
     new Promise(reject=>setTimeout(()=>reject(new Error("new")),1000)),
-    new Promise(resolve=>setTimeout(()=>resolve(3),1000))
-]).catch(console.log("yes"))
+    new Promise(resolve=>setTimeout(()=>resolve(3),7000))
+]).catch((error)=>console.log(error.message))
 
+
+/*
 Promise.all([
     1,2,3
 ]).then(a=>a.forEach(a=>console.log(a)))
@@ -40,11 +47,7 @@ Promise.all([
 
 //Promise settled
 
-let urls = [
-    'https://api.github.com/users/iliakan',
-    'https://api.github.com/users/remy',
-    'https://no-such-url'
-  ];
+
 
   Promise.allSettled(urls.map(url=>fetch(url))).then(
     response=>{
@@ -66,11 +69,12 @@ Promise.race([
 ]).then(data=>console.log(data))
 
 //Promise any
+
 Promise.any([
     new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops!")), 1000)),
     new Promise((resolve, reject) => setTimeout(() => resolve("yes"), 2000)),
     new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
-  ]).then(resolve=>console.log(resolve));
+  ]).then("yes",resolve=>console.log(resolve));
   Promise.any([
     new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops!")), 1000)),
     new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops1!")), 3000))
@@ -97,5 +101,6 @@ let cache=new Map();
   
   console.log(loadCache('https://api.github.com/users/jeresig'));
 console.log(cache);
-let promise = new Promise((resolve, reject) => reject(error));
+let promise5 = new Promise((resolve, reject) => reject(error));
 
+*/

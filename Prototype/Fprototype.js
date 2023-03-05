@@ -44,4 +44,6 @@ let what=new Name("Rakshithzxs");
 console.log(what.name)
 let what1=new what.constructor();
 
-console.log(what1.name)
+console.log(what1.name);
+
+
