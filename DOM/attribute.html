@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+         .order[data-order-state="pending"] {
+    color: blue;}
+    .order[data-order-state="cancelled"] {
+    color: red;
+  }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,15 +39,18 @@
         elem1.value='10'
         console.log(elem1.getAttribute('value'))
         console.log(elem1.nextElementSibling.getAttribute('checked'))
+        console.log(typeof elem.style);
 
-
-
-
+//href attribute is full attribute even if a relative path is provided
+//non standard attribute
+        let d= document.getElementById('ui')
+        console.log(d,d.getAttribute("show-info"))
+        d.dataset.orderState='cancelled';
     </script>
 </head>
 <body id="test1"  something="56">
-
-    <div id="test">
+    <div id='ui' class=order show-info="age" data-order-state="pending">YES</div>
+    <div id="test" style="color:red;text-align: center;">
         <input type="text" id="test2">
         <input type="checkbox" checked id="test3">
     </div>

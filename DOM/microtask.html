@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="module">
+    /*
+    1.splitting CPU hungry tasks.
+    2.progress bar indication
+    3.
+    */
+  let i=0;
+  function count() {
+    /*for (let i = 0; i < 1e6; i++) {
+      i++;
+      progress.innerHTML = i;
+    }
+  }
+  count();*/
+  do {
+    i++;
+    progress.innerHTML = i;
+  } while (i % 1e3 != 0);
+
+  if (i < 1e7) {
+    queueMicrotask(count);
+  }
+
+}
+
+count();
+//micro task
+setTimeout(() => alert("timeout"));
+
+Promise.resolve()
+  .then(() => alert("promise"));
+
+alert("code");
+
+</script>
+<body>
+    <div id="progress"></div>
+</body>
+</html>
