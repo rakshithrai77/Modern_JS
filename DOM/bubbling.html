@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body *
+        {
+            margin: 1px;
+            border:1px solid;
+            border-color: blue;
+        }
+    </style>
+    
+    </head>
+</head>
+<body>
+      
+<form onclick="handler(event)">FORM
+    <div >DIV
+      <p onclick="alert('yes')">P</p>
+    </div>
+</form>
+
+<div onclick="alert(`the bubbling doesn't reach here`)">
+    <button id="3">Click me</button></div>
+    </div>
+</body>
+<script>
+    function handler(event)
+    {
+        alert("target = " + event.target.tagName + ", this=" + event.currentTarget) 
+    }
+    let button=document.getElementById('3');
+    button.addEventListener('click',()=>{alert("yes")})
+    button.addEventListener('click',(event)=>event.stopPropagation())
+    /*for(let elem of document.querySelectorAll('*')) {
+    elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), true);
+    elem.addEventListener("click", e => alert(`Bubbling: ${elem.tagName}`));
+  }*/
+  //Listeners on the same element and same phase run in their set order
+</script>
+</body>
+</html>
