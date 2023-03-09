@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        /*function ready() {
+          alert('DOM is ready');
+      
+          // image is not yet loaded (unless it was cached), so the size is 0x0
+          alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+        }
+      let analyticsData = { /* object with gathered data }*/ ;
+
+window.addEventListener("unload", function() {
+  navigator.sendBeacon("/analytics", JSON.stringify(analyticsData));
+});
+        document.addEventListener("DOMContentLoaded", ready);
+  document.addEventListener("DOMContentLoaded", () => {
+    alert("DOM ready!");
+    document.addEventListener('readystatechange', () => console.log(document.readyState));
+  window.onload = function() { // can also use window.addEventListener('load', (event) => {
+    alert('Page loaded');
+
+    // image is loaded at this time
+    alert(`Image size: ${img1.offsetWidth}x${img1.offsetHeight}`);
+  };
+  window.onbeforeunload = function() {
+  return false;
+};
+
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+
+<script>
+  alert("Library loaded, inline script executed");
+</script>
+        
+      
+</head>
+<body>
+    <img id="img1" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+</body>
+</html>
