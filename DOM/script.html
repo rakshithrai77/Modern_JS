@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => alert("DOM ready after defer!"));
+        //The defer attribute is ignored if the <script> tag has no src.
+            //dynamic script
+            function loadScript(src) {
+  let script = document.createElement('script');
+  script.src = src;
+  script.async = true;
+  document.body.append(script);
+}
+
+// long.js runs first because of async=false
+loadScript("https://javascript.info/article/script-async-defer/long.js?speed=1");
+loadScript("https://javascript.info/article/script-async-defer/small.js");
+      </script>
+      //
+</head>
+<body>
+    <p>...content before script...</p>
+
+<!--<script src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+<script async src="https://google-analytics.com/analytics.js"></script>
+<script async src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+<script async src="https://javascript.info/article/script-async-defer/small.js"></script>
+ This isn't visible until the script loads -->
+<p>...content after script...</p>
+</body>
+</html>
