@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+      let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+        let response = await fetch(url);
+    if (response.ok) { 
+  
+    let json = await response.json();
+    } else {
+        alert("HTTP-Error: " + response.status);
+        }
+    response = await fetch(url);
+
+        let commits = await response.json(); // read response body and parse as JSON
+
+//alert(commits[0] .author.login);
+response = await fetch('/article/fetch/logo-fetch.svg');
+
+let blob = await response.blob(); 
+
+
+let img = document.createElement('img');
+img.style = 'position:fixed;top:10px;left:10px;width:100px';
+document.body.append(img);
+
+
+img.src = URL.createObjectURL(blob);
+
+setTimeout(() => { 
+  img.remove();
+  URL.revokeObjectURL(img.src);
+}, 3000);
+ response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+
+
+alert(response.headers.get('Content-Type')); 
+
+for (let [key, value] of response.headers) {
+  console.log(`${key} = ${value}`);
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
