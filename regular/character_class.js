@@ -16,7 +16,7 @@ let regexp1 = /CS.4/;
 console.log("CSS4".match(regexp1));
 console.log( "CS4".match(/CS.4/) );
 
-//. matches anything both not newline achiived via /s flag
+//. matches anything both not newline achieved via /s flag
 
 console.log("CS\nS".match(/CS.S/s));
 
