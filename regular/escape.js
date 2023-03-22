@@ -9,5 +9,5 @@ console.log( "Chapter 5.1".match(regexp) );
 
 regexp="\\d\\.\\d";
 
-console.log("Chapter 5.1".match(regexp))
+console.log("Chapter 5.1".match(regexp));
 

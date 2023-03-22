@@ -1,0 +1,39 @@
+.cal {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  padding: 2%;
+}
+
+h4 {
+  color: grey;
+  padding-bottom: 1rem;
+  font-weight: 300;
+}
+
+input[type=text] {
+  width: 100%;
+  height: 70px;
+  border: none;
+  text-align: right;
+  font-weight: 700;
+  font-size: large;
+  padding: 1rem;
+}
+input[type=text]:hover {
+  background-color: rgb(115, 99, 99);
+}
+
+input[type=button] {
+  text-align: center;
+  width: 6rem;
+  height: 70px;
+  background-color: white;
+  border: 0;
+  font-weight: 700;
+  font-size: large;
+}
+input[type=button]:hover {
+  background-color: rgb(237, 236, 236);
+  transition: 0.5s;
+}/*# sourceMappingURL=main.css.map */
