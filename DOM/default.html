@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/" onclick="return false">Click here</a>
+<a href="/" onclick="event.preventDefault()">here</a>
+<ul id="menu" class="menu">
+    <li><a href="/html">HTML</a></li>
+    <li><a href="/javascript">JavaScript</a></li>
+    <li><a href="/css">CSS</a></li>
+  </ul>
+
+  <p>Right-click here for the document context menu</p>
+<button id="elem">Right-click here for the button context menu</button>
+
+<script>
+  elem.oncontextmenu = function(event) {
+    event.preventDefault();
+    alert("Button context menu");
+  };
+
+  document.oncontextmenu = function(event) {
+    if(event.defaultPrevented) return
+    event.preventDefault();
+    alert("Document context menu");
+  };
+  </script>
+</body>
+</html>
